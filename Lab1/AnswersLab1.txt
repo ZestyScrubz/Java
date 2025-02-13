@@ -1,0 +1,33 @@
+Answers for Lab 1
+-----------------------------------------------
+
+
+PRE-LAB
+
+1. What javadoc tags will you use to document a method?
+/* DOCUMMENTATION */ for multiline and // for single line
+
+
+EXERCISE 1
+
+2. What happens if in the constructor we do not use the keyword "this"? 
+The code will break because the code won't know what variable is which if you are using the same variable.
+We would be assigning the variable to itself which isn't very useful (name = name)
+
+
+EXERCISE 2
+
+3. What do you expect to be printed out in Step 11 ("Same player" or "Different player")?
+I expect it to be different player because we are comparing if the object p1, with the default format and characters, 
+is the same as p2, with the default format and character, which they are not 
+
+
+
+EXERCISE 3
+
+4. What do you expect to be printed out in Step 8 ("Same player" or "Different player")?
+Now that we created a function .equals() that checks the name and the jersey number of each object, we are no longer comparing the default
+format and the character, rather we are comparing the names and jersery number of each object. In this case they are the same,
+so I expect it to print out Same player
+
+

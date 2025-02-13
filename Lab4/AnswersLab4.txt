@@ -1,0 +1,46 @@
+Answers for Lab 4
+-----------------------------------------------
+
+
+EXERCISE 1
+
+
+1. When i begins at 20, why are we not seeing 20 nodes printed out? How many nodes are in the linked list?
+We are not seeing all 20 because the method printList() is only printing the first 10 nodes. There are 20 nodes in the linked list
+
+
+2. When i begins at 5, why does the program crash after printing out the number 5? How many nodes are in the linked list? What kind of exception is thrown here?
+In the printList() method, it is trying to print out 10 nodes but we only created 5, and the six node is null so it crashes
+
+
+
+EXERCISE 2
+
+
+3. What are the 4 possible cases we need to consider? What would curr be equal to (or NOT equal to) in each of these 4 cases?
+The frou cases we need to consider is 
+1. If the element we want to remove is in the front (curr would be equal to the first node)
+2. If the element is in the rear (curr would be equal to the last node)
+3. If the element is somewhere in between (cuur would be equal to something other than front and rear)
+4. If the element does not exist (curr would be equal to null)
+
+
+
+EXERCISE 3
+
+
+4. For Test 1 (the linked list with one node), did the modify() method crash or enter an infinite loop or run without errors?
+It crashed because "q" is null
+
+
+5. For Test 2 (the linked list with two nodes), did the modify() method crash or enter an infinite loop or run without errors?
+It run just fine
+
+
+6. For Test 3 (the linked list with three nodes), did the modify() method crash or enter an infinite loop or run without errors?
+It entered an infinite loop
+
+
+7. Did your sketches and hand-traces of the modify() method for each of the 3 linked lists make sense with the results you reported in the above questions?
+Yes, a little
+

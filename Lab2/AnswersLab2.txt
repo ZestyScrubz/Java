@@ -1,0 +1,78 @@
+Answers for Lab 2
+-----------------------------------------------
+
+EXERCISE 1
+
+1. Looking at PrimNonPrim.java (without running it), answer these questions:
+
+a. What is the variable type of num1? Is this primitive or non-primitive?
+    Primative
+b. What is the variable type of num2? Is this primitive or non-primitive?
+    Non-privative
+c. Can we invoke (call) methods on primitive variables?
+    No
+d. What is the default value of an int (i.e. a non-initialized cell in an int array)?
+    0
+e. What is the default value of an Integer (i.e. a non-initialized cell in an Integer array)?
+    null
+f. Do you think a == b is a true statement?
+    yes
+g. Do you think c == d is a true statement?
+    no
+h. Do you think c.equals(d) is a true statement?
+    no
+    It turns out it is true because the Integer method .equals() compares the values stored in the Integer object, not the memory adress
+
+
+
+2. What happens when you try to call a.equals(b)? Why is this happening?
+    An error occurs because int is a primative type and primative type do not have methods such as .equals() or .toString().
+
+
+3. This question refers to variables data1 and data2 in class TestDataTypes. For each one of the following statements indicate whether the comparison will return the value true or false
+
+data1 == data2: true or false?
+    False
+data1.intVar == data2.intVar: true or false?
+    True
+data1.charVar == data2.charVar: true or false?
+    True
+data1.boolVar == data2.boolVar: true or false?
+    True
+data1.doubleVar == data2.doubleVar: true or false?
+    True
+data1.varA == data2.varA: true or false?
+    False
+data1.varA.numItems == data2.varA.numItems: true or false?
+    True
+data1.varA.arrItems == data2.varA.arrItems: true or false?
+    True
+
+
+
+4. How many of your answers to question 3 were incorrect? 
+    8
+
+
+5. Why was the result of the last comparison true, even though arrays are non-primitive types?
+    arrItems in both objects, data1.varA and data2.varA, refers to the same array in the memory.
+    This is because data1.varA and data2.varA were both constructed by the same testArray reference.
+
+
+
+EXERCISE 3
+
+6. What values were printed out for obj1.x and obj1.y, and obj2.x and obj2.y? Why do you think is happening?
+    obj1.x prits 10
+    obj2.x prints 20
+    obj2.y prints 30
+    the value of y changes because it is static so when setting y = 30 after y = 10
+
+
+7. What do you expect counter to equal? What value is it showing? Why do you think this is happening?
+    I expected to be the random number that was generated but it is showing 1.
+    I think this is happening because the counter variable is not shared across all instances becuase it is a non-static variable
+    Basically each instance of ClassC has it own counter that starts at 0 and increments to one when it is called.
+    By changing the value to static it should increment the amount of time the class is called
+
+

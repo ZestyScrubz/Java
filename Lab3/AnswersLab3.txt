@@ -1,0 +1,57 @@
+Answers for Lab 2
+-----------------------------------------------
+
+
+
+EXERCISE 1
+
+1. Should instance variable interestRate be declared as static? Explain.
+No it shouldn't be static since we each new class should have their own unique interest rate. If we make it static then all the interest rate will be the same
+
+2. Write the output from the main method in the class SavingsAccount.
+SavingsAccount: balance $115.0, interest rate 0.15
+
+
+EXERCISE 2
+
+3. Which method(s) of the class CheckingAccount demonstrate overriding? Which methods demonstrate overloading?
+It overrides deposit, withdraw, and toString and the class does not have overloading
+
+4. Is bacc0 = chacc1 legal? Why?
+yes because the checking class is a sub-class of the bank class
+
+5. Is chacc1 = bacc1 legal? Why?
+no because the bank class is the parent class and saving class is the child and the child class cannot be the parent class.
+The parent class object might not have all the methods in the child class
+
+6. On which variables bacc1, chacc1, sacc1 was the invocation to method
+deductFees() valid? Explain.
+deductFees() was only valid on chacc1 because the method is only found in the checking account class
+so the parent class and another other class that is not a subclass of that checking account will not have the method
+
+7. Which compilation error(s) could be fixed through casting? Which one(s)
+could not be fixed? Why?
+Only bacc1 was able to be fixed through casting and not sacc1 because bacc1 has inheritance relationship (parent class) while sacc1 does not
+
+8. Why did the program crash? What kind of exception was thrown?
+The programed crashed beause bacc1 is an instance of BankAccount and CheckingAccount and at runtime Java realizes that bacc1 is not actually CheckingAccount object
+giving us a ClassCastException
+
+9. What was the runtime error obtained when changing super.deposit(amount)
+to deposit(amount) in class CheckingAccount.java? 
+A StackOverflowError occurs due to recursive call in the deposit method
+
+
+
+EXERCISE 3
+
+10. Why does the compiler issue an error message when invoking newAcc.getTransactionCount()? Why does the compiler issue an error message when invoking newAcc.getInterestRate()?
+There is an error because the compiler still thinks that newAcc is an object of BankAccount and BankAccount does not have those methods.
+The compiler doesn't see the type changing since it is behind an if-statement
+
+11. Can you tell whether in the statement String accountInfo = newAcc.toString(); the
+method toString() being invoked is from the class CheckingAccount or from the class
+SavingsAccount? Explain your answer.
+Just by looking at it I cannot tell which class it is going to be invoked because I don't know what the class is going to be.
+By looking at it, if accountType is c then CheckingAccount .toString() will be invoked,
+but if accountType is s then SavingsAccount.toString will be invoked

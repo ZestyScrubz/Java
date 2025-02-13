@@ -1,0 +1,68 @@
+Answers for Lab 5
+-----------------------------------------------
+
+
+
+EXERCISE 1
+
+1. Explain why there is a compiler error on each of the following lines.
+
+a) Line 12
+    There is an error because the code the code wont know if the if-statment will run.
+    If it doesn't run, then the method wont return a boolean
+b) Line 42
+    Since the method m1 is not static, it cannot be called in the same class
+c) Line 54
+    k variable k is already defined earlier in the method, so the program wouldn't know
+    which k to choose.
+
+
+
+2. Why is there now a compiler error on Line 35?
+    NUM_ITEMS is a FINAL variable and those variable are not allowed to change
+
+3. Why is there a warning on Line 36?
+    We are declaring the variable done but we never use it
+
+4. Why is k incrementing in m1 but not updating in main?
+    Because k in the m1 method is a local variable and does not share values with the variable in the main
+
+
+EXERCISE 2
+
+5. Why did testArray[0][0] not change?
+    Because the variable j starts at 1 and not 0
+
+6. What are the values of i and j? Is it correct that the program tries to store the value (i+1)*j in testArray[i][j]?
+    The value of i is 0 and the value of j is 1. This is correct, but the arr[0][0] wont be filled
+
+
+EXERCISE 3
+
+7. What do you expect to be printed out from the 3 print statements?
+    2 9 3
+
+8. What values were actually printed out from the 3 print statements?
+    2 9 3
+
+
+EXERCISE 4
+
+9. Write the type of exception (i.e. NullPointerException) that occurs from each of the 5 cases:
+
+a) NullPointerException
+b) ArrayIndexOutOfboudnsException
+c) ArithmeticException
+d) ClassCastException
+e) NumberFormatException
+
+
+10. How many exceptions occurred? What type(s) are they? Why aren't the other exceptions being thrown?
+    1
+    NullPointerException
+    Because the first one crashes and the rest of the code doesn't run
+
+11. What type of exception do you think was triggered in the m1(7) method call?
+    ArrayIndexOutOfboudnsException
+    m2 triggered ArrayIndexOutOfboudnsException
+

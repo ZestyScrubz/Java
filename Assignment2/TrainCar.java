@@ -25,7 +25,7 @@ public class TrainCar {
     }
 
     public String toString() {
-        return String.format("<%s,%d >", freight, weight);
+        return String.format("<%s, %d>", freight, weight);
     }
 
     public boolean canConnect(TrainCar other) {

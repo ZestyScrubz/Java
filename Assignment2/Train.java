@@ -17,6 +17,7 @@ public class Train {
     }
 
     public void addCar(TrainCar car) {
+        // System.out.println("car" + car);
         DoubleNode<TrainCar> newNode = new DoubleNode<>(car);
 
         // If train is empty new car is locomotive and caboose
@@ -24,40 +25,41 @@ public class Train {
             locomotive = newNode;
             caboose = newNode;
         } else {
-            // Check if the new car can connect to the end of the train
+            // add the new car to the end of the train
+
             if (caboose.getElement().canConnect(car)) {
-                // Add it to the end
-                caboose.setNext(newNode); // Link current cabbose to the new node
-                newNode.setPrevious(caboose); // Link new node back to current caboose
-                caboose = newNode; // Update caboose to the new node
+                newNode.setNext(caboose);
+                caboose.setPrevious(newNode);
+                caboose = newNode;
+                
             } else {
-                // if it cannot be added to the back
+                
                 DoubleNode<TrainCar> current = caboose;
-
+                
                 while (current != null) {
-                    if (current.getElement().canConnect(car)) {
-                        DoubleNode<TrainCar> nextNode = current.getNext();
+                    if (current.getElement().canConnect(car) && current.getPrevious().getElement().canConnect(car)) {
 
-                        // Link new car after current
-                        current.setNext(newNode);
-                        newNode.setPrevious(current);
+                        DoubleNode<TrainCar> previousNode = current.getPrevious();
 
-                        if (nextNode != null) {
-                            // Link new car to the next node if it exists
-                            newNode.setNext(nextNode);
-                            nextNode.setPrevious(newNode);
-                        } else {
-                            caboose = newNode;
-                        }
+                        // Make previous node point to the new node and the new node point to the previous
+                        previousNode.setNext(newNode);
+                        newNode.setPrevious(previousNode);
+
+                        // Make new node point to next node/current node and next node point to new node
+                        newNode.setNext(current);
+                        current.setPrevious(newNode);
+                        break;
+                        
+                    } else {
+                        current = current.getNext();
                     }
 
-                    current = current.getPrevious();
                 }
 
-                throw new TrainException("The car could not be added in the train");
-
+                throw new TrainException("The car could not be added");
             }
         }
+
     }
 
     public boolean tryAddCar(TrainCar car) {
@@ -72,8 +74,8 @@ public class Train {
     public void removeCar(TrainCar car) {
         // Start from the back of the train and check if car are the same
         DoubleNode<TrainCar> current = caboose;
-
         while(current != null) {
+            System.out.println(car);
             if (current.getElement().equals(car)) {
                 // if its the only car in the train
                 if (current == locomotive && current == caboose) {
@@ -96,10 +98,13 @@ public class Train {
                     if (prevNode.getElement().canConnect(nextNode.getElement())) {
                         prevNode.setNext(nextNode);
                         nextNode.setPrevious(prevNode);
+                        break;
+                    } else {
+                        throw new TrainException("The car could not be removed");
                     }
                 }
             } else {
-                throw new TrainException("The car could not be removed");
+                current = current.getNext();
             }
         }
 
@@ -117,26 +122,25 @@ public class Train {
     }
 
     public String toString() {
-
         String string = "";
-
-        if (locomotive == null && caboose == null) {
+    
+        if (locomotive == null) {
             return "The train is empty.";
         } else {
-            DoubleNode<TrainCar> current = caboose; // start from the back
-
+            DoubleNode<TrainCar> current = locomotive; // Start from the back
             while (current != null) {
-                string += current.getElement().toString();
-
-                if (current.getNext() != null) {
+                string += current.getElement().toString(); // Append the current car's string representation
+    
+                // If this is not the last car, add ", "
+                if (current.getPrevious() != null) {
                     string += ", ";
                 }
-
-                current = current.getNext();
+    
+                current = current.getPrevious(); // Move to the next car
             }
-
             return string;
         }
     }
+    
 
 }

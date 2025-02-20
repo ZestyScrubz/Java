@@ -6,9 +6,9 @@ public class Tests {
 		// It may help to run just one test at a time until it is working correctly.
 		// Debugging is usually easier on isolated test cases.
 		
-		test1();
-		//test2();
-		//test3();
+		//  test1();
+		// test2();
+		 test3();
 
 	}
 	
@@ -55,7 +55,7 @@ public class Tests {
 			t.tryAddCar(new TrainCar(4, "medicine"));
 			t.tryAddCar(new TrainCar(4, "oil"));
 
-			//System.out.println("\n" + t); // Print train
+			System.out.println("\n" + t); // Print train
 			
 			String[] exp = new String[] {"<medicine, 4>", "<medicine, 7, 10C>", "<meat, 4, 8C>", "<medicine, 4>", "<oil, 4>", "<lumber, 4>", "<lumber, 7>"};
 			
@@ -91,7 +91,7 @@ public class Tests {
 			
 			t.tryAddCar(new Reefer(10, 7, "fish"));
 			
-			//System.out.println("\n" + t); // Print train
+			System.out.println("\n" + t); // Print train
 			
 			String[] exp = new String[] {"<computers, 10>", "<computers, 10>", "<fish, 10, 7C>", "<oil, 10>", "<oil, 8>", "<oil, 5>"};
 			

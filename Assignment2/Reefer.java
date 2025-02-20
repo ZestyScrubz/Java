@@ -43,7 +43,7 @@ public class Reefer extends TrainCar {
         }
 
         if (other instanceof Reefer) {
-            Reefer otherReefer = (Reefer other);
+            Reefer otherReefer = (Reefer) other;
             return (this.temp == otherReefer.getTemp());
         }
 

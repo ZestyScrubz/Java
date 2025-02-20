@@ -17,6 +17,7 @@ public class Tests {
 		try {
 			
 			Train t = new Train();
+
 			t.tryAddCar(new TrainCar(5, "lumber"));
 			t.tryAddCar(new TrainCar(3, "lumber"));
 			t.tryAddCar(new TrainCar(4, "lumber"));
@@ -25,7 +26,7 @@ public class Tests {
 			t.tryAddCar(new TrainCar(5, "steel"));
 			t.tryAddCar(new Reefer(6, 7, "fish"));
 			
-			//System.out.println("\n" + t); // Print train
+			System.out.println("\n" + t); // Print train
 			
 			String[] exp = new String[] {"<lumber, 5>", "<lumber, 3>", "<lumber, 9>", "<lumber, 4>", "<meat, 4, 10C>", "<fish, 6, 7C>"};
 			

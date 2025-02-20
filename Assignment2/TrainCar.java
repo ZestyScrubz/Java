@@ -1,7 +1,7 @@
 public class TrainCar {
 
     private int weight;
-    private Stirng freight;
+    private String freight;
 	
 	public TrainCar(int weight, String freight) {
         this.weight = weight;
@@ -12,7 +12,7 @@ public class TrainCar {
         return weight;
     }
 
-    public String getFrieght() {
+    public String getFreight() {
         return freight;
     }
 
@@ -21,7 +21,7 @@ public class TrainCar {
     }
 
     public void setFreight(String freight) {
-        this.freight = freight
+        this.freight = freight;
     }
 
     public String toString() {
@@ -29,14 +29,14 @@ public class TrainCar {
     }
 
     public boolean canConnect(TrainCar other) {
-        return {
-            this.getWeight == other.getWeight || this.getFrieght.equals(other.getFrieght)
-        }
+        return (
+            this.getWeight() == other.getWeight() || this.getFreight().equals(other.getFreight())
+        );
     }
 
     public boolean equals(TrainCar other) {
-        return {
-            this.getWeight == other.getWeight && this.getFrieght.equals(other.getFrieght)
-        }
+        return (
+            this.getWeight() == other.getWeight() && this.getFreight().equals(other.getFreight())
+        );
     }
 }

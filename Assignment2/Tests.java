@@ -6,9 +6,9 @@ public class Tests {
 		// It may help to run just one test at a time until it is working correctly.
 		// Debugging is usually easier on isolated test cases.
 		
-		//  test1();
+		test1();
 		// test2();
-		 test3();
+		// test3();
 
 	}
 	
@@ -25,11 +25,14 @@ public class Tests {
 			t.tryAddCar(new TrainCar(9, "lumber"));
 			t.tryAddCar(new TrainCar(5, "steel"));
 			t.tryAddCar(new Reefer(6, 7, "fish"));
-			
+
 			System.out.println("\n" + t); // Print train
 			
 			String[] exp = new String[] {"<lumber, 5>", "<lumber, 3>", "<lumber, 9>", "<lumber, 4>", "<meat, 4, 10C>", "<fish, 6, 7C>"};
 			
+			
+
+
 			if (checkTrain(t, exp)) {
 				System.out.println("\t PASSED!");
 			} else {
@@ -92,7 +95,7 @@ public class Tests {
 			t.tryAddCar(new Reefer(10, 7, "fish"));
 			
 			System.out.println("\n" + t); // Print train
-			
+
 			String[] exp = new String[] {"<computers, 10>", "<computers, 10>", "<fish, 10, 7C>", "<oil, 10>", "<oil, 8>", "<oil, 5>"};
 			
 			if (checkTrain(t, exp)) {
@@ -113,10 +116,13 @@ public class Tests {
 		
 		String fStr = travForward(t.getLocomotive());
 		String bStr = travBackward(t.getCaboose());
-		
+
 		String[] fArr = fStr.split("%%%");
 		String[] bArr = bStr.split("%%%");
-		
+
+		System.out.println(fArr.length);
+		System.out.println(bArr.length);
+
 		if (fArr.length != n || bArr.length != n) return false;
 		
 		for (int i = 0; i < n; i++) {

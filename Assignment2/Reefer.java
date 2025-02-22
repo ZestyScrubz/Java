@@ -1,25 +1,54 @@
+/*
+CS 1027B – Assignment 2
+Name: Isaac Tran
+Student Number: 251446564
+Email: itran9
+Created: February 18, 2025
+*/
+
 public class Reefer extends TrainCar {
 
+    // Global variable instances
     private int temp;
 
+    /*
+     * Constructor to initialize variable
+     * 
+     * @param weight Weight of the carried item
+     * @param temp Temperature of the carried item
+     * @param freight Name of the carried item
+     */
     public Reefer(int weight, int temp, String freight) {
         super(weight, freight);
         this.temp = temp;
 
     }
 
+    // Getter method to retreive temperature
     public int getTemp() {
         return temp;
     }
 
+    // Setter method to set temperature
     public void setTemp(int temp) {
         this.temp = temp;
     }
 
+    /*
+     * Return a string representing this element in the format: <freight, weight, tempC>
+     * 
+     * @return A string representing this element in the format: <freight, weight, tempC>
+     */
     public String toString() {
         return (String.format("<%s, %d, %dC>", getFreight(), getWeight(), temp));
     }
 
+    /*
+     * Determine whether or not this Reefer can connect to other
+     * 
+     * @param other A specified TrainCar to see if it connects with this
+     * @return true if they can connect, false otherwise
+     */
     public boolean canConnect(TrainCar other) {
         // If the superclass allows connection, return true
         if (super.canConnect(other)) {
@@ -37,17 +66,30 @@ public class Reefer extends TrainCar {
         return false;
     }
 
+    /*
+     * Determine if this and other are considered to be identical.
+     * 
+     * @param other A specified TrainCar to see if it identical to this
+     * @return true if they are identical, false otherwise
+     */
     public boolean equals(TrainCar other) {
-        if (super.equals(other)) {
+        
+            // If the TrainCar are not equal based on the TrainCar's equals() then they are not equal
+            if (!super.equals(other)) {
+                
+                return false;
+            }
+    
+            // Check if both are Reefers
+            if (other instanceof Reefer && this instanceof Reefer) {
+                Reefer otherReefer = (Reefer) other;
+                Reefer thisReefer = (Reefer) this;
+                return thisReefer.getTemp() == otherReefer.getTemp(); // if the temps are the same
+            }
+    
+            // If not both are Reefers, they are not equal
             return false;
-        }
-
-        if (other instanceof Reefer) {
-            Reefer otherReefer = (Reefer) other;
-            return (this.temp == otherReefer.getTemp());
-        }
-
-        return false;
+        
 
     }
 

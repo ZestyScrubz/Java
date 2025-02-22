@@ -67,8 +67,11 @@ public class TrainCar {
      * @return true if this and other are identical, false if they are not
      */
     public boolean equals(TrainCar other) {
-        return (
-            this.getWeight() == other.getWeight() && this.getFreight().equals(other.getFreight())
-        );
+        // If one is a Reefer and the other is not, they are not equal
+        if ((this instanceof Reefer && !(other instanceof Reefer)) || (!(this instanceof Reefer) && other instanceof Reefer)) {
+                return false;
+        } else {
+            return (this.getWeight() == other.getWeight() && this.getFreight().equals(other.getFreight()));
+        }
     }
 }

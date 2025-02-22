@@ -73,24 +73,25 @@ public class Reefer extends TrainCar {
      * @return true if they are identical, false otherwise
      */
     public boolean equals(TrainCar other) {
-        
-            // If the TrainCar are not equal based on the TrainCar's equals() then they are not equal
-            if (!super.equals(other)) {
-                
-                return false;
-            }
     
-            // Check if both are Reefers
-            if (other instanceof Reefer && this instanceof Reefer) {
+
+        // If they are both non-reefer
+        if (!(this instanceof Reefer) && !(other instanceof Reefer)) {
+            return (super.equals(other));
+        }
+
+        // Check if both are Reefers and compare temperatures
+        if (other instanceof Reefer && this instanceof Reefer) {
+            if (super.equals(other)) {                
                 Reefer otherReefer = (Reefer) other;
                 Reefer thisReefer = (Reefer) this;
                 return thisReefer.getTemp() == otherReefer.getTemp(); // if the temps are the same
             }
-    
-            // If not both are Reefers, they are not equal
             return false;
-        
-
+        }
+    
+        // If not both are Reefers, they are not equal
+        return false;
     }
 
 }

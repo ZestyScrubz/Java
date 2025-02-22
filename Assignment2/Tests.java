@@ -26,7 +26,13 @@ public class Tests {
 			t.tryAddCar(new TrainCar(5, "steel"));
 			t.tryAddCar(new Reefer(6, 7, "fish"));
 
-			System.out.println("\n" + t); // Print train
+			Reefer a = new Reefer(6, 7, "fish");
+			Reefer b = new Reefer(6, 7, "fish");
+
+			System.out.println(a.equals(b));
+
+
+			// System.out.println("\n" + t); // Print train
 			
 			String[] exp = new String[] {"<lumber, 5>", "<lumber, 3>", "<lumber, 9>", "<lumber, 4>", "<meat, 4, 10C>", "<fish, 6, 7C>"};
 			

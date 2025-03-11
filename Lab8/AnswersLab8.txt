@@ -1,0 +1,44 @@
+Answers for Lab 8
+-----------------------------------------------
+
+
+EXERCISE 1
+
+1. What values are expected for sortBy? What does each one stand for / represent?
+We are expecting char value for sortBy, char c stands for city, char e stands for email, and char n stands for name
+
+
+2. What should the while loop condition be so that it continues to prompt the user for input until they enter 'n', 'e', or 'c'. Should this conditional include && (and) or || (or) operators? 
+It should be or || because we are seeing if the user input any one of the three and not all three at the same time.
+
+
+3. How many different approaches to printing out the contact list can you think of? Which one requires the least amount of code to be added?
+iterating using an iterator, using for loop, using array list. I think the one that would require the least
+amount of code would be using the toString method from ArrayOrderedList or ArrList.
+This is because it  has a built-in method that can handle common list operation like add, remove and iterate
+
+
+4. How are the contacts sorted when you multiply -1 by the result in the compareByName() method? Why is this happening?
+The items are now sorted in reverse order when n is entered. This is because we are mulitpling the value by -1
+causing the list to eb sorted in decesnding order
+
+
+
+EXERCISE 2
+
+5. How do we know that we can call iterator() on each of the 5 collections from the array? Why does this not cause a compiler error?
+We know that we can call the iterator() method on each of the 5 collections because they all implement the AbstractCollection<Integer>
+interface. This does not cause a compiler error because the AbstractCollection iterface provides a common contract that ensure the presence
+of the interator method
+
+
+6. Can you tell how each of the collections was implemented? (i.e. were they implemented with arrays, linked lists, or other underlying data structures?) How can we loop through the values without knowledge of their implementation?
+ArrayList interanlly implemens using a dynamic array
+LinkedList internally implemented using a doubly linked list
+We can loop through the values of these collection by using the interator method which provide a standard
+way to traverse the elements in the collection since it is implemented by all collection classes in Java collection framework
+
+
+
+
+

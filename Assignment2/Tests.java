@@ -13,7 +13,8 @@ public class Tests {
 	}
 	
 	private static void test1 () {
-		System.out.print("Test 1");
+		System.out.println("Test 1");
+		System.out.println(5/2);
 		try {
 			
 			Train t = new Train();

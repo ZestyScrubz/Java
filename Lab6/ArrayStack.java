@@ -132,9 +132,9 @@ public class ArrayStack<T> implements StackADT<T> {
 	private void expandCapacity() {
 		T[] larger = (T[])(new Object[stack.length*2]);
 
-		for (int index=1; index < stack.length; index++)
+		for (int index = 1; index < stack.length; index++){
 			larger[index] = stack[index];
-
+		}
 		stack = larger;
 	}
 	

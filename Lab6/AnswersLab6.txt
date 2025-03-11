@@ -1,0 +1,31 @@
+Answers for Lab 6
+-----------------------------------------------
+
+
+EXERCISE 1
+
+1. How many swaps must be made to correctly reverse the array?
+half of the array length
+
+
+2. Does the code need to change for an array of odd length vs an array of even length?
+No because when you divide an odd number by two, it doesnt round up so the middle doesn't swap and if it even then all number will swap
+
+
+EXERCISE 2
+
+3. In expandCapacity(), why does the loop start at 1 instead of 0? Does this matter?
+Becaused the ArrayStack class had be designed to start its array indexong from 1 instead of 0.
+This means that the element at index 0 is not used.
+
+
+EXERCISE 3
+
+4. Does the order of the two pops matter? What if we swapped the order of op1 and op2? In which cases would this change the output and in which cases would it not change the output?
+Yes the order matters because it will give a different operator. For example if we have 3 5 -. 5 - 3 is different than 3 - 5.
+So the output would change if the operator was subtraction and division
+While the output will stay the same if the operator is addition or multiplication
+
+5. Once the loop is finished, how do you obtain the result from the stack?
+You can get the result by popping the top element from the stack, because after evalutating the entire postfix
+expression, the stack should conatin a single element, which is the final result.

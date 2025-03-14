@@ -7,11 +7,6 @@ import java.awt.Image;
 import java.awt.Polygon;
 import java.awt.Rectangle;
 import java.awt.RenderingHints;
-import java.awt.TexturePaint;
-import java.awt.image.BufferedImage;
-import java.io.File;
-
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 
@@ -123,7 +118,7 @@ public class CellComponent extends JComponent  {
 		
 		String imgFile = null;
 		if (type == CellType.START) {
-			imgFile = "start2.jpg";
+			imgFile = "start.jpg";
 		} else if (type == CellType.END) {
 			imgFile = "mc.jpg";
 		} else if (type == CellType.GRASS) {

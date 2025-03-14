@@ -59,7 +59,7 @@ public class ArrayStack<T> implements StackADT<T> {
             result += array[i] + ", ";
         }
 
-        result += array[array.length] + ", ";
+        result += array[array.length - 1] + ", ";
 
         return result;
     }

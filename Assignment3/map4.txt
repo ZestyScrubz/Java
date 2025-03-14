@@ -1,0 +1,7 @@
+#rows, #columns
+5 5
+S F F F F
+F F G F F
+G F F F F
+W F E W F
+G W G F F

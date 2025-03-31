@@ -1,0 +1,57 @@
+Answers for Lab 10
+-----------------------------------------------
+
+EXERCISE 1
+
+1. What should the return type be in each of the following methods?
+
+getData() --> T 
+getLeft() --> BinaryTreeNode<T> 
+getRight() --> BinaryTreeNode<T>
+
+
+
+2. What should the parameter type be in each of the following methods?
+
+setData() --> T 
+setLeft() --> BinaryTreeNode<T>
+setRight() --> BinaryTreeNode<T>
+
+
+
+3. What would need to be added/removed/changed to make this class work for a more general tree such that each node could have more than 2 nodes?
+we would need to remove the left and right attribubes, then replace them with a list or array of child nodes
+Then we update the getter and setter methods to manage multiple children instead of just two
+The modify the constructor to initialize the list of children instead of left and right refereces
+
+
+EXERCISE 2
+
+4. What is the base case of the size(r) method? What are the recursive cases?
+Base case for size: If r is null, return 0 (empty subtree)
+Recursive: If r is not null, return 1 plus the sizees of the left and right subtrees
+Base case for caintains: If r is null, return false
+Recursive: If current node caintains targetElement, return true, else search recursivly in the left and right subtrees
+
+
+5. What is the main difference between the 3 methods: inorder(), preorder(), and postorder()? What is the "visit" action being done in the implementations of these traversals?
+inorder: left -> root -> right
+preorder: root -> left -> right
+postorder: left -> right -> root
+The "visit" action is adding the node’s data to the list. his determines when the node’s value is processed relative to its children.
+
+6. In the recFormatTree() method, what is the space parameter used for? What is the default value when this method is first called? What is being concatenated to this space value in the recursive calls? Does this make sense for how the tree is being displayed?
+The space parameter is used for indentation.
+The default value when this method is first called is an empty stirng
+In the recursive call, a tab character is concatenated to space each time increasing indentation as the recursion goes deeper
+This makes sense decause the right rubtree is printed first, with more indentation as recursion goes deeper
+ 2. the rrot node is printed at its curretn indentation level
+ 3. the left subtree is printed last, also increasing indentation as needed
+
+
+EXERCISE 3
+
+7. How can you tell if a given node is a leaf node?
+The node is a leaf node is it has no children, so we need to check if 
+node.getLeft() and node.getright() == null, if they do then that node is a leaf node
+

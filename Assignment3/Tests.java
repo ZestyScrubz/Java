@@ -7,8 +7,8 @@ public class Tests {
 		// Debugging is usually easier on isolated test cases.
 		
 		//test1();
-		test2();
-		//test3();
+		//test2();
+		test3();
 
 	}
 	

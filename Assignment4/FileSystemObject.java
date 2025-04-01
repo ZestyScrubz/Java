@@ -11,7 +11,13 @@ public class FileSystemObject implements Comparable<FileSystemObject> {
         this.name = name;
         this.id = id;
         
-        children = new ArrayOrderedList<>();
+        if (!this.isFile()) {
+            System.out.println(this.name + " is a foler");
+            children = new ArrayOrderedList<>();
+        } else {
+            System.out.println(this.name + " is a file");
+            children = null;
+        }
     }
 
     public String getName() {
@@ -39,19 +45,24 @@ public class FileSystemObject implements Comparable<FileSystemObject> {
     }
 
     public boolean isFile() {
-        return children == null;
+        return (this instanceof ComputerFile);
     }
 
     public void addChild(FileSystemObject node) throws DirectoryTreeException {
         if (isFile()) {
             throw new DirectoryTreeException("We cannot store a file/folder within a file.");
-        } else if (checkDuplicateName(node.getName())) {
+        } 
+        
+        if (children == null) {
+            children = new ArrayOrderedList<>();
+        }
+
+        if (checkDuplicateName(node.getName())) {
                 throw new DirectoryTreeException("We cannot have two files/folder with the same name stored in the same folder.");
-        } else {
+        }
             // if this is a folder, add the given node as a child of this
             node.setParent(this);
             children.add(node);
-        }
     }
 
     private boolean checkDuplicateName(String name) {
@@ -97,7 +108,7 @@ public class FileSystemObject implements Comparable<FileSystemObject> {
 
         // if they are both file or folder, use build in compare to check alphabetical
         // not case sentitive ordering
-        return this.name.compareToIgnoreCase(other.name);
+        return (this.name.compareToIgnoreCase(other.name));
     }
 
 }

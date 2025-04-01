@@ -15,6 +15,7 @@ public class Tests {
 
 	private static void test01 () {
 		System.out.print("Test 1 - toString()");
+
 		try {
 
 			DirectoryTree t = createTree();
@@ -263,3 +264,4 @@ public class Tests {
 		return null;
 	}
 }
+ 

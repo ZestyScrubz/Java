@@ -99,6 +99,7 @@ public class DirectoryTree {
         }
 
         // add lines for child nodes
+        System.out.println(node + " this is the node");
         for (FileSystemObject child : node.getChildren()) {
             result += buildTree(child, depth + 1);
         }

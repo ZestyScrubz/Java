@@ -98,7 +98,7 @@ public class DirectoryTree {
             result = indentation + "- " + node.getName() + "\n";  // For other nodes, add the dash
         }
 
-        // add lines for child nodes
+        // add lines for child nodess
         System.out.println(node + " this is the node");
         for (FileSystemObject child : node.getChildren()) {
             result += buildTree(child, depth + 1);

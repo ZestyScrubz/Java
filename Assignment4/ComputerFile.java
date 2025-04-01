@@ -1,5 +1,4 @@
 
-
 public class ComputerFile extends FileSystemObject {
 
     private int size;

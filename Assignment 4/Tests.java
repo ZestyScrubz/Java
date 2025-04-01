@@ -18,8 +18,7 @@ public class Tests {
 		try {
 
 			DirectoryTree t = createTree();
-			//System.out.println();
-			//System.out.println(t);
+			System.out.println(t.toString());
 
 			String exp = "C:\n"
 					+ " - Users\n"
@@ -100,9 +99,12 @@ public class Tests {
 			String s3 = t.buildPath(f4, f1);
 			
 			boolean b1 = s1 != null && s1.equals("../../img_1285019.jpg");
+			System.out.println(s1);
 			boolean b2 = s2 != null && s2.equals("../../Bob/Games/pacman.exe");
+			System.out.println(s2);
 			boolean b3 = s3 != null && s3.equals("../Alice/Website/index.html");
-			
+			System.out.println(s3);
+
 			if (b1 && b2 && b3) {
 				System.out.println("\t\t PASSED!");
 			} else {
@@ -172,6 +174,11 @@ public class Tests {
 			// Now, check original and new total file sizes to determine if files were copied.
 			int newSize = t.getRoot().size();
 			boolean b2 = origSize == 23209 && newSize == 23508;
+
+			System.out.println();
+			System.out.println(origSize);
+			System.out.println(newSize);
+			
 
 			if (b1 && b2) {
 				System.out.println("\t\t PASSED!");

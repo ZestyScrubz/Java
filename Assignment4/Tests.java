@@ -6,10 +6,10 @@ public class Tests {
 
 	public static void main(String[] args) {
 
-		test01(); // DT toString
-		test02(); // DT lca
-		test03(); // DT buildPath
-		test04(); // DT cutPaste
+		// test01(); // DT toString
+		// test02(); // DT lca
+		// test03(); // DT buildPath
+		// test04(); // DT cutPaste
 		test05(); // DT copyPaste
 	}
 
@@ -19,7 +19,6 @@ public class Tests {
 		try {
 
 			DirectoryTree t = createTree();
-			System.out.println(t.toString());
 
 			String exp = "C:\n"
 					+ " - Users\n"
@@ -39,6 +38,7 @@ public class Tests {
 					+ "     - asst3.pdf\n"
 					+ "     - asst4.pdf\n"
 					+ "   - resume.docx";
+
 
 			if (t.toString().strip().equals(exp.strip())) {
 				System.out.println("\t\t PASSED!");
@@ -100,11 +100,8 @@ public class Tests {
 			String s3 = t.buildPath(f4, f1);
 			
 			boolean b1 = s1 != null && s1.equals("../../img_1285019.jpg");
-			System.out.println(s1);
 			boolean b2 = s2 != null && s2.equals("../../Bob/Games/pacman.exe");
-			System.out.println(s2);
 			boolean b3 = s3 != null && s3.equals("../Alice/Website/index.html");
-			System.out.println(s3);
 
 			if (b1 && b2 && b3) {
 				System.out.println("\t\t PASSED!");
@@ -179,6 +176,8 @@ public class Tests {
 			System.out.println();
 			System.out.println(origSize);
 			System.out.println(newSize);
+
+			
 			
 
 			if (b1 && b2) {
